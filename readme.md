@@ -48,3 +48,15 @@ class CustomAjaxHandler extends AjaxHandler
     }
 }
 ```
+
+# Responses
+
+### Send a Successful JSON Response
+In your callback function, call *$this->json( $data );* to send a JSON formatted response and terminate the program.
+This will fire under jQuery's $.ajax.done() callback.
+
+### Send an Error JSON Response
+We can return an error JSON response via *$this->error( $data, $errorCode );*. This will fire under jQuery's $.ajax.fail()
+callback.
+
+
