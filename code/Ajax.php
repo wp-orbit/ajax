@@ -8,6 +8,16 @@ namespace Zawntech\WordPress\Orbit\Ajax;
 class Ajax
 {
     /**
+     * @var array
+     */
+    protected $privateActions = [];
+
+    /**
+     * @var array
+     */
+    protected $publicActions = [];
+
+    /**
      * Set the header to return JSON data.
      */
     public function setJson()
@@ -34,5 +44,44 @@ class Ajax
         $this->setJson();
         $this->setHttpCode( $code );
         echo json_encode( $data );
+    }
+
+    public function addPrivateAction( $action, $class )
+    {
+        $this->privateActions[] = [
+            'action' => $action,
+            'class' => $class
+        ];
+    }
+
+    public function addPublicAction( $action, $class )
+    {
+        $this->publicActions[] = [
+            'action' => $action,
+            'class' => $class
+        ];
+    }
+
+
+    /**
+     * @var Ajax
+     */
+    protected static $instance;
+
+    /**
+     * Ajax constructor.
+     */
+    protected function __construct()
+    {}
+
+    /**
+     * @return Ajax
+     */
+    public static function getInstance()
+    {
+        if ( null === static::$instance ) {
+            static::$instance = new static;
+        }
+        return static::$instance;
     }
 }
