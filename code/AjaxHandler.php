@@ -96,4 +96,30 @@ abstract class AjaxHandler
         $this->bindPublicActions();
         $this->bindPrivateActions();
     }
+
+    /**
+     * Send a JSON error response and terminate request.
+     * @param array $data
+     * @param int $httpCode
+     */
+    protected function error( $data = [], $httpCode = 400 )
+    {
+        Ajax::getInstance()->setHttpCode( $httpCode );
+        Ajax::getInstance()->setJson();
+        echo json_encode( $data );
+        exit;
+    }
+
+    /**
+     * Send a JSON response and terminate request.
+     * @param array $data
+     * @param int $httpCode
+     */
+    protected function json( $data = [], $httpCode = 200 )
+    {
+        Ajax::getInstance()->setHttpCode( $httpCode );
+        Ajax::getInstance()->setJson();
+        echo json_encode( $data );
+        exit;
+    }
 }
