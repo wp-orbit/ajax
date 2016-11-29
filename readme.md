@@ -2,7 +2,7 @@
 
 via WP Orbit
 
-This packaged provided as extensible PHP class *AjaxHandler*, which can be declared in any plugin or theme.
+This packaged provides an extensible PHP class *AjaxHandler*, whose extensions can be declared in any plugin or theme.
 
 In your extending class declare any of the three appropriate protected properties (each arrays):
 
