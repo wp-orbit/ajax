@@ -8,12 +8,12 @@ namespace Zawntech\WordPress\Orbit\Ajax;
 class Ajax
 {
     /**
-     * @var array
+     * @var array An array of ajax action strings which are bound to logged-in-users.
      */
     protected $privateActions = [];
 
     /**
-     * @var array
+     * @var array An array of ajax action strings which are bound to unauthenticated users.
      */
     protected $publicActions = [];
 
@@ -46,6 +46,11 @@ class Ajax
         echo json_encode( $data );
     }
 
+    /**
+     * Adds a private action callback.
+     * @param $action
+     * @param $class
+     */
     public function addPrivateAction( $action, $class )
     {
         $this->privateActions[] = [
@@ -54,6 +59,11 @@ class Ajax
         ];
     }
 
+    /**
+     * Adds a public action callback.
+     * @param $action
+     * @param $class
+     */
     public function addPublicAction( $action, $class )
     {
         $this->publicActions[] = [
@@ -61,7 +71,6 @@ class Ajax
             'class' => $class
         ];
     }
-
 
     /**
      * @var Ajax
