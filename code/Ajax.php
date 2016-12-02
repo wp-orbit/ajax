@@ -1,9 +1,9 @@
 <?php
-namespace Zawntech\WordPress\Orbit\Ajax;
+namespace WPOrbit\Ajax;
 
 /**
  * Class Ajax
- * @package Zawntech\WordPress\Orbit\Ajax
+ * @package WPOrbit\Ajax
  */
 class Ajax
 {

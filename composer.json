@@ -13,7 +13,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Zawntech\\WordPress\\Orbit\\Ajax\\": "/code"
+            "WPOrbit\\Ajax\\": "/code"
         }
     }
 }

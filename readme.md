@@ -2,7 +2,7 @@
 
 via WP Orbit
 
-This packaged provides an extensible PHP class *AjaxHandler*, which can be extended in any plugin or theme.
+This packaged provides an extensible PHP class *AjaxController*, which can be extended in any plugin or theme.
 It provides a lightweight wrapper for hooking ajax calls, sending ajax responses with HTTP status codes, allowing
 for front-end error handling.
 
@@ -25,9 +25,9 @@ For example:
 
 ```php
 <?php
-use Zawntech\WordPress\Orbit\Ajax\AjaxHandler;
+use WPOrbit\Ajax\AjaxController;
 
-class CustomAjaxHandler extends AjaxHandler
+class CustomAjaxController extends AjaxController
 {
     protected $publicActions = [
         'public_callback'

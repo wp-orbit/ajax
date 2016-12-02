@@ -1,11 +1,11 @@
 <?php
-namespace Zawntech\WordPress\Orbit\Ajax;
+namespace WPOrbit\Ajax;
 
 /**
- * Class AjaxHandler
- * @package Zawntech\WordPress\Orbit\Ajax
+ * Class AjaxController
+ * @package WPOrbit\Ajax
  */
-abstract class AjaxHandler
+abstract class AjaxController
 {
     /**
      * @var array An array of wp-ajax action keys that should be bound to logged-in users only.
