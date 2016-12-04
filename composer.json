@@ -13,7 +13,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "WPOrbit\\Ajax\\": "/code"
+            "WPOrbit\\Ajax\\": "code/"
         }
     }
 }

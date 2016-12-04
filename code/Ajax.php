@@ -18,6 +18,22 @@ class Ajax
     protected $publicActions = [];
 
     /**
+     * @return array
+     */
+    public function getPublicActions()
+    {
+        return $this->publicActions;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPrivateActions()
+    {
+        return $this->privateActions;
+    }
+
+    /**
      * Set the header to return JSON data.
      */
     public function setJson()
@@ -48,12 +64,14 @@ class Ajax
 
     /**
      * Adds a private action callback.
+     * @param $prefix
      * @param $action
      * @param $class
      */
-    public function addPrivateAction( $action, $class )
+    public function addPrivateAction( $prefix, $action, $class )
     {
         $this->privateActions[] = [
+            'prefix' => $prefix,
             'action' => $action,
             'class' => $class
         ];
@@ -61,12 +79,14 @@ class Ajax
 
     /**
      * Adds a public action callback.
+     * @param $prefix
      * @param $action
      * @param $class
      */
-    public function addPublicAction( $action, $class )
+    public function addPublicAction( $prefix, $action, $class )
     {
         $this->publicActions[] = [
+            'prefix' => $prefix,
             'action' => $action,
             'class' => $class
         ];
