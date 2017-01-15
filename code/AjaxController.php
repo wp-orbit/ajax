@@ -143,8 +143,8 @@ abstract class AjaxController
      */
     protected function bindAnyActions()
     {
-        $this->bindAjaxActions( $this->publicActions, 'wp_ajax_nopriv' );
-        $this->bindAjaxActions( $this->privateActions, 'wp_ajax' );
+        $this->bindAjaxActions( $this->anyActions, 'wp_ajax' );
+        $this->bindAjaxActions( $this->anyActions, 'wp_ajax_nopriv' );
     }
 
     /**
@@ -152,9 +152,9 @@ abstract class AjaxController
      */
     public function __construct()
     {
+        $this->bindAnyActions();
         $this->bindPublicActions();
         $this->bindPrivateActions();
-        $this->bindAnyActions();
     }
 
     /**
